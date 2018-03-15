@@ -1,0 +1,7 @@
+<h1>Imagery {{imageryNum}}:</h1>
+<h2>Visualizers:</h2>
+<ul>
+  <li *ngFor="let vis of visualizers">
+    {{vis | json}}
+  </li>
+</ul>
