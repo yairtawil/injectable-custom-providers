@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { BaseVisualizerService } from '../../imagery/visualizers/base-visualizer.service';
 import { CustomService } from '../services/custom.service';
+import { BaseVisualizer } from '@injectable-custom-providers/imagery';
 
 @Injectable()
-export class VisualizerCustom2Service extends BaseVisualizerService {
+export class VisualizerCustom1Service extends BaseVisualizer {
   setEntities(): void {
     console.log(this.constructor.name, 'setEntities');
   }

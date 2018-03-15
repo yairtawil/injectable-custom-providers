@@ -1,6 +1,6 @@
 import { Injector } from '@angular/core';
-import { BaseVisualizerService } from '../../visualizers/base-visualizer.service';
-import { VISUALIZERS_COLLECTION } from '../../visualizers/visualizers-collection';
+import { BaseVisualizer } from '../../visualizers/base-visualizer';
+import { VISUALIZERS_COLLECTION } from '../../visualizers/visualizers-collection.injecton-token';
 
 export function BaseVisualizerServiceUseFactory(providersCollection: any[], parent: Injector) {
   const providers = providersCollection.reduce((v, i) => [...v, ...i], []);
@@ -8,12 +8,12 @@ export function BaseVisualizerServiceUseFactory(providersCollection: any[], pare
   if (providers.length === 0) {
     return [];
   }
-  return childInjector.get(BaseVisualizerService);
+  return childInjector.get(BaseVisualizer);
 
 }
 
 export const BaseVisualizerServiceFactory = {
-  provide: BaseVisualizerService,
+  provide: BaseVisualizer,
   useFactory: BaseVisualizerServiceUseFactory,
   deps: [VISUALIZERS_COLLECTION, Injector]
 };

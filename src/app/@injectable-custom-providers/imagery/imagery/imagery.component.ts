@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { BaseVisualizerService } from '../visualizers/base-visualizer.service';
+import { BaseVisualizer } from '../visualizers/base-visualizer';
 import { BaseVisualizerServiceFactory } from './factory-providers/base-visualizer.service.factory';
 
 @Component({
@@ -12,7 +12,7 @@ export class ImageryComponent implements OnInit {
   static imageryNum = 0;
 
   get visualizers() {
-    return this.baseVisualizerService.map((ins: BaseVisualizerService) => ({
+    return this.baseVisualizerService.map((ins: BaseVisualizer) => ({
       name: ins.constructor.name,
       creatingNum: ins.creatingNum
     }));
@@ -20,8 +20,7 @@ export class ImageryComponent implements OnInit {
 
   imageryNum = ++ImageryComponent.imageryNum;
 
-  constructor(@Inject(BaseVisualizerService) protected baseVisualizerService: BaseVisualizerService[]) {
-    console.log(baseVisualizerService);
+  constructor(@Inject(BaseVisualizer) protected baseVisualizerService: BaseVisualizer[]) {
   }
 
   ngOnInit() {

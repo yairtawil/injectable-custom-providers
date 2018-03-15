@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { VISUALIZERS_COLLECTION } from '../imagery/visualizers/visualizers-collection';
 import { visualizers } from './visualizers-array';
+import { VISUALIZERS_COLLECTION } from '@injectable-custom-providers/imagery';
 
 @NgModule({
   imports: [

@@ -1,9 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { ImageryModule } from './imagery/imagery.module';
-import { ProvidersModule } from './providers/providers.module';
-import { CustomModule } from './custom/custom.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { ImageryModule } from '@injectable-custom-providers/imagery/imagery.module';
+import { ProvidersModule } from '@injectable-custom-providers/providers/providers.module';
+import { CustomModule } from '@custom/custom/custom.module';
 
 
 @NgModule({
